@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自身免疫性脑炎 IVIG（丙球）使用流程图</title>
+  <style>
+    :root {
+      --bg: #f6fafc;
+      --paper: #ffffff;
+      --ink: #17212b;
+      --muted: #607080;
+      --line: #d5e0e8;
+      --navy: #123b5d;
+      --teal: #0e8a83;
+      --red: #b9433b;
+      --amber: #d99a2b;
+      --green: #3c8d57;
+      --violet: #6d55b8;
+      --blue-soft: #e7f1f8;
+      --teal-soft: #e4f4f2;
+      --amber-soft: #fbf1da;
+      --red-soft: #f7e8e6;
+      --green-soft: #e8f4ec;
+      --violet-soft: #f0edf8;
+      --shadow: 0 16px 42px rgba(18, 59, 93, 0.08);
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.58;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 28px 70px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 30px;
+      align-items: stretch;
+      padding: 34px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 790px;
+      font-size: 46px;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 820px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .mark-dose {
+      display: inline;
+      padding: 2px 6px 3px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, #ffe28a 35%);
+      color: var(--navy);
+      font-weight: 850;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .notice {
+      margin-top: 22px;
+      border-left: 6px solid var(--amber);
+      background: var(--amber-soft);
+      padding: 15px 18px;
+      color: #70420d;
+      font-size: 14px;
+    }
+
+    .dose-card {
+      background: var(--navy);
+      color: #fff;
+      min-height: 260px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow);
+    }
+
+    .dose-card .label {
+      font-size: 32px;
+      font-weight: 850;
+      margin-bottom: 20px;
+    }
+
+    .dose-card .dose {
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    .dose-card .note {
+      color: #d9e7ef;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    p { margin: 0; }
+
+    .section-note {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 22px;
+      min-height: 150px;
+      box-shadow: var(--shadow);
+    }
+
+    .stripe { border-top: 10px solid var(--navy); }
+    .stripe.teal { border-top-color: var(--teal); }
+    .stripe.amber { border-top-color: var(--amber); }
+    .stripe.red { border-top-color: var(--red); }
+    .stripe.green { border-top-color: var(--green); }
+    .stripe.violet { border-top-color: var(--violet); }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--blue-soft);
+      color: var(--navy);
+    }
+
+    .tag.teal { background: var(--teal-soft); color: var(--teal); }
+    .tag.amber { background: var(--amber-soft); color: var(--amber); }
+    .tag.red { background: var(--red-soft); color: var(--red); }
+    .tag.green { background: var(--green-soft); color: var(--green); }
+    .tag.violet { background: var(--violet-soft); color: var(--violet); }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+
+    .formula {
+      margin: 12px 0;
+      padding: 15px 16px;
+      background: #0f2235;
+      color: #e6eef5;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.55;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #eaf0f5;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f6f9;
+      color: #41566b;
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    ul, ol {
+      margin: 10px 0 0 1.2em;
+      padding: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    li { margin: 7px 0; }
+
+    .callout {
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: #eef6fa;
+      border-left: 6px solid var(--teal);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .calc {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #cfdbe6;
+      padding: 11px 12px;
+      background: #fbfdff;
+      color: var(--ink);
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(14, 138, 131, 0.12);
+    }
+
+    .result {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px dashed #b8c8d5;
+      background: #f5f9fb;
+    }
+
+    .pill {
+      background: #fff;
+      border: 1px solid #dbe5ed;
+      padding: 11px;
+    }
+
+    .pill span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pill b {
+      display: block;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .check {
+      background: #f8fbfd;
+      border: 1px solid #dce7ef;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+
+    .check::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .risk { border-left: 8px solid var(--navy); }
+    .risk.red { border-left-color: var(--red); }
+    .risk.amber { border-left-color: var(--amber); }
+    .risk.teal { border-left-color: var(--teal); }
+
+    .flow-wrap {
+      overflow-x: auto;
+      padding-bottom: 12px;
+    }
+
+    .flow {
+      min-width: 1060px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 150px 38px 210px 38px 210px 38px 210px 38px 150px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .flow-row.reverse {
+      grid-template-columns: 210px 38px 230px 38px 210px 38px 210px;
+      justify-content: end;
+      margin-top: 34px;
+    }
+
+    .flow-node {
+      min-height: 106px;
+      padding: 17px 16px;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+    }
+
+    .flow-node h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .flow-node p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .flow-node.blue { background: var(--blue-soft); }
+    .flow-node.teal { background: var(--teal-soft); }
+    .flow-node.amber { background: var(--amber-soft); }
+    .flow-node.red { background: var(--red-soft); }
+    .flow-node.green { background: var(--green-soft); }
+    .flow-node.ivig {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .flow-node.ivig h3,
+    .flow-node.ivig p { color: #fff; }
+
+    .arrow {
+      height: 3px;
+      background: #9fb3c3;
+      position: relative;
+    }
+
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -5px;
+      width: 10px;
+      height: 13px;
+      background: #9fb3c3;
+    }
+
+    .arrow.left::after {
+      right: auto;
+      left: 0;
+    }
+
+    .arrow.green,
+    .arrow.green::after { background: var(--green); }
+    .arrow.red,
+    .arrow.red::after { background: var(--red); }
+
+    .drop {
+      width: 3px;
+      height: 68px;
+      margin-left: auto;
+      margin-right: 74px;
+      background: #9fb3c3;
+      position: relative;
+    }
+
+    .drop::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -5px;
+      width: 13px;
+      height: 10px;
+      background: #9fb3c3;
+    }
+
+    .refs a {
+      color: var(--navy);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .page { padding: 28px 18px 48px; }
+      .hero,
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .calc,
+      .result,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 34px; }
+      .dose-card { min-height: 190px; }
+      .card { min-height: auto; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; padding: 20px; }
+      .card, .dose-card { box-shadow: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="kicker">AE急性期免疫治疗 | IVIG / 丙种球蛋白</p>
+        <h1>自身免疫性脑炎：丙球怎么用？</h1>
+        <p class="subtitle">核心思路：疑似或确诊自身免疫性脑炎（AE）且感染等替代诊断已同步评估后，IVIG属于一线免疫治疗选择之一。常用总量 <b>2 g/kg</b>，分 <b>2-5天</b>；<span class="mark-dose">临床最常见写法是 0.4 g/kg/日 x 5天</span>。</p>
+        <div class="notice"><b>临床提示：</b>本页用于临床学习和医嘱思路整理，不替代个体化医嘱。具体处方需结合患者年龄、体重、肾功能、血栓风险、过敏史、容量状态、产品说明书及本院药事规范；必要时完成血制品、费用、超说明书/自费等知情同意。</div>
+      </div>
+      <aside class="dose-card" aria-label="IVIG常用剂量">
+        <div class="label">IVIG</div>
+        <div class="dose">0.4 g/kg/日<br>x 5日</div>
+        <div class="note">总量 2 g/kg；也可按 2 g/kg 分 2-5日输注。若 2.5 g/瓶，总瓶数约为体重 x 0.8。</div>
+      </aside>
+    </header>
+
+    <section>
+      <h2>治疗定位</h2>
+      <p class="section-note">IVIG通常不是孤立使用，而是AE急性期一线免疫治疗的一部分。高度疑似或抗体阳性时，可在排查感染等替代诊断的同时尽早启动。</p>
+      <div class="grid three">
+        <article class="card stripe">
+          <span class="tag">疑似AE</span>
+          <h3>先抓临床综合征</h3>
+          <p class="muted">亚急性精神行为异常、癫痫、意识障碍、运动障碍、自主神经紊乱等；同步完善MRI、EEG、CSF、血清+CSF抗体。</p>
+        </article>
+        <article class="card stripe teal">
+          <span class="tag teal">同步排查</span>
+          <h3>感染未排除时要谨慎</h3>
+          <p class="muted">若HSV等感染性脑炎仍不能排除，应先覆盖抗感染/抗病毒并动态复评，避免盲目免疫抑制。</p>
+        </article>
+        <article class="card stripe amber">
+          <span class="tag amber">一线免疫</span>
+          <h3>甲强龙 +/- IVIG</h3>
+          <p class="muted">轻-中症可用甲泼尼龙冲击 +/- IVIG；重症/ICU常考虑联合一线，低通气或重度自主神经紊乱时早期评估血浆置换。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>剂量与瓶数</h2>
+      <p class="section-note">保留原HTML的核心公式和快速计算器，便于床旁按体重快速估算。</p>
+      <div class="grid three">
+        <article class="card stripe">
+          <span class="tag">推荐剂量</span>
+          <h3>标准冲击量</h3>
+          <div class="formula">IVIG 总量 = 体重 kg x 2 g/kg
+常用拆分 = 体重 kg x 0.4 g/kg/日 x 5日</div>
+          <p class="muted small">速度和总容量需看产品浓度、患者耐受和心肾功能。</p>
+        </article>
+        <article class="card stripe green">
+          <span class="tag green">2.5 g/瓶计算</span>
+          <h3>瓶数公式</h3>
+          <div class="formula">每日瓶数 = 体重 x 0.4 ÷ 2.5
+总瓶数 = 体重 x 0.4 x 5 ÷ 2.5 = 体重 x 0.8</div>
+          <p class="muted small">实际开具时按药房规格、整瓶规则、剩余量处理和本院规则取整。</p>
+        </article>
+        <article class="card stripe red">
+          <span class="tag red">给药顺序</span>
+          <h3>注意PLEX会清除IVIG</h3>
+          <p class="muted">若准备血浆置换，需统筹顺序；通常避免IVIG后马上PLEX，以免刚输注的免疫球蛋白被清除。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>IVIG使用流程图</h2>
+      <p class="section-note">融合版采用“诊断确认 -> IVIG给药 -> 1-2周复评 -> 改善/升级”的主路径；具体流程需结合ICU风险、可及性和禁忌证。</p>
+      <div class="flow-wrap">
+        <div class="flow" role="img" aria-label="自身免疫性脑炎IVIG使用流程图">
+          <div class="flow-row">
+            <div class="flow-node"><h3>疑似AE</h3><p>亚急性精神/癫痫/意识/运动/自主神经症状</p></div>
+            <div class="arrow"></div>
+            <div class="flow-node blue"><h3>同步完善检查</h3><p>MRI、EEG、CSF、血清+CSF抗体；排除感染/代谢</p></div>
+            <div class="arrow"></div>
+            <div class="flow-node amber"><h3>替代诊断？</h3><p>感染未排除：先覆盖抗感染/抗病毒并动态评估</p></div>
+            <div class="arrow"></div>
+            <div class="flow-node teal"><h3>高度疑似/确诊</h3><p>不必等全部抗体结果；启动一线免疫治疗</p></div>
+            <div class="arrow"></div>
+            <div class="flow-node ivig"><h3>给IVIG</h3><p>总量2 g/kg；常用0.4 g/kg/日 x 5日</p></div>
+          </div>
+          <div class="drop"></div>
+          <div class="flow-row reverse">
+            <div class="flow-node"><h3>随访</h3><p>复发监测、肿瘤筛查、功能恢复和并发症管理</p></div>
+            <div class="arrow left"></div>
+            <div class="flow-node red"><h3>无效/恶化</h3><p>换/加血浆置换；讨论利妥昔单抗、环磷酰胺等二线</p></div>
+            <div class="arrow left red"></div>
+            <div class="flow-node green"><h3>改善</h3><p>继续康复/症状控制；必要时激素递减或维持免疫</p></div>
+            <div class="arrow left green"></div>
+            <div class="flow-node"><h3>1-2周复评</h3><p>意识、癫痫、精神行为、自主神经、呼吸支持需求</p></div>
+          </div>
+        </div>
+      </div>
+      <p class="section-note">重症/ICU：甲强龙 + IVIG；中枢低通气或重度自主神经紊乱时，早期评估血浆置换。</p>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <span class="tag">开医嘱模板</span>
+        <h2>成人常用写法</h2>
+        <table>
+          <thead><tr><th>项目</th><th>建议写法/要点</th></tr></thead>
+          <tbody>
+            <tr><td>主药</td><td>静注人免疫球蛋白（IVIG）<b>0.4 g/kg</b> 静脉滴注 qd x 5 d</td></tr>
+            <tr><td>疗程</td><td>每日开短嘱，D1-D5；总量 2 g/kg</td></tr>
+            <tr><td>预处理</td><td>非绝对必须；如既往反应/过敏风险，可按院内常规用苯海拉明、对乙酰氨基酚 +/- 地塞米松</td></tr>
+            <tr><td>输注速度</td><td>低速起始，耐受后逐步加速；肾功能不全、老年、血栓风险高者用最低可行速度</td></tr>
+            <tr><td>联合治疗</td><td>常与甲泼尼龙冲击联合；若准备血浆置换，避免 IVIG 后马上 PLEX 以免被清除</td></tr>
+            <tr><td>知情同意</td><td>说明可能自费/超说明书、血制品风险、过敏/血栓/肾损伤等风险</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <span class="tag green">快速计算器</span>
+        <h2>按体重计算剂量与瓶数</h2>
+        <div class="calc">
+          <div><label for="weight">体重 kg</label><input id="weight" type="number" value="60" min="1" step="0.1"></div>
+          <div><label for="dailyDose">每日剂量 g/kg</label><input id="dailyDose" type="number" value="0.4" min="0" step="0.1"></div>
+          <div><label for="days">天数</label><input id="days" type="number" value="5" min="1" step="1"></div>
+          <div><label for="vial">每瓶规格 g</label><input id="vial" type="number" value="2.5" min="0.1" step="0.1"></div>
+        </div>
+        <div class="result">
+          <div class="pill"><span>每日剂量</span><b id="outDaily">24 g</b></div>
+          <div class="pill"><span>总剂量</span><b id="outTotal">120 g</b></div>
+          <div class="pill"><span>每日瓶数</span><b id="outDailyVial">9.6 瓶</b></div>
+          <div class="pill"><span>总瓶数</span><b id="outTotalVial">48 瓶</b></div>
+        </div>
+        <p class="small muted">例：60 kg患者，0.4 g/kg/日 x 5天，每日24 g，总量120 g。若2.5 g/瓶，每日9.6瓶，总48瓶；实际按药房规则取整。</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>输注前评估与监测</h2>
+      <p class="section-note">先找出会让IVIG变危险的风险点，重点是肾损伤、血栓、过敏/IgA缺乏、容量负荷和高黏滞状态。</p>
+      <div class="grid two">
+        <article class="card risk">
+          <h3>肾功能/尿量</h3>
+          <p class="muted">Scr、eGFR、尿量；脱水、老年、糖尿病、肾病、脓毒症、使用肾毒性药物者需格外谨慎。</p>
+        </article>
+        <article class="card risk red">
+          <h3>血栓风险</h3>
+          <p class="muted">既往血栓、长期卧床、肿瘤、高凝、中心静脉导管、高黏滞状态、心血管危险因素。</p>
+        </article>
+        <article class="card risk amber">
+          <h3>过敏风险</h3>
+          <p class="muted">既往IVIG/血制品反应、IgA缺乏史；输注中观察皮疹、喘憋、低血压等。</p>
+        </article>
+        <article class="card risk teal">
+          <h3>容量负荷</h3>
+          <p class="muted">心衰、肾衰、低氧或容量敏感患者需控制速度、浓度和补液策略。</p>
+        </article>
+      </div>
+      <div class="callout">输注期间：低速起始，耐受后逐步加速；监测生命体征、头痛/发热/寒战、过敏表现、尿量/肌酐、血栓事件和容量超负荷。</div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <span class="tag amber">用前核对</span>
+        <h2>开丙球前检查清单</h2>
+        <div class="checklist">
+          <div class="check">明确疑似/确诊AE，已同步排查感染性脑炎</div>
+          <div class="check">记录实际体重，肥胖/特殊人群按医院药学建议</div>
+          <div class="check">查肾功能、电解质、尿量，评估容量状态</div>
+          <div class="check">评估血栓风险：卧床、肿瘤、既往血栓、高黏滞等</div>
+          <div class="check">询问IVIG/血制品过敏史，必要时评估IgA缺乏</div>
+          <div class="check">沟通血制品、费用、获益与风险，签署知情同意</div>
+        </div>
+      </article>
+      <article class="card">
+        <span class="tag red">不良反应</span>
+        <h2>哪些情况要特别谨慎？</h2>
+        <ul>
+          <li><b>轻度反应：</b>发热、寒战、头痛、皮疹，可减慢/暂停输注并对症处理。</li>
+          <li><b>严重过敏：</b>喘憋、低血压、喉头水肿等，需停药并急救处理。</li>
+          <li><b>血栓/肾损伤：</b>高危患者需充分水化、低速输注并动态监测尿量和肌酐。</li>
+          <li><b>神经系统反应：</b>无菌性脑膜炎样表现、高剂量或快速输注时更应警惕。</li>
+          <li><b>容量超负荷/TRALI：</b>低氧、肺水肿或心衰患者需特别谨慎。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>复评与升级</h2>
+      <div class="grid two">
+        <article class="card stripe green">
+          <span class="tag green">有效</span>
+          <h3>进入巩固与随访</h3>
+          <ul>
+            <li>继续康复、营养、抗癫痫和精神症状管理。</li>
+            <li>根据复发风险考虑口服激素递减或周期性免疫治疗。</li>
+            <li>持续肿瘤筛查，尤其抗NMDAR、LGI1、CASPR2等相关情境。</li>
+          </ul>
+        </article>
+        <article class="card stripe red">
+          <span class="tag red">无效/恶化</span>
+          <h3>及时升级</h3>
+          <ul>
+            <li>重新审视感染、肿瘤、代谢/毒性和非AE诊断。</li>
+            <li>与血浆置换统筹顺序，避免清除刚输注的IVIG。</li>
+            <li>讨论二线免疫：利妥昔单抗、环磷酰胺等。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <span class="tag violet">一句话总结</span>
+      <h2>你前面写的公式是否成立？</h2>
+      <p><b>成立。</b>如果按2.5 g/瓶计算，总瓶数公式就是：</p>
+      <div class="formula">体重 x 0.4 x 5 ÷ 2.5 = 体重 x 0.8</div>
+      <p class="muted">例如60 kg：60 x 0.8 = 48瓶；每日剂量60 x 0.4 = 24 g，即24 ÷ 2.5 = 9.6瓶/日。临床实际开药要按药房是否允许非整瓶、规格是否为2.5 g、剩余液处理、患者容量耐受来调整。</p>
+    </section>
+
+    <footer class="refs">
+      <b>主要参考：</b>
+      <ol>
+        <li>Abboud H, et al. <i>Autoimmune encephalitis: proposed best practice recommendations for diagnosis and acute management.</i> JNNP, 2021：IVIG 2 g/kg over 2-5 days；一线治疗可包括激素、IVIG、血浆置换。<a href="https://jnnp.bmj.com/content/92/7/757" target="_blank" rel="noreferrer">JNNP</a></li>
+        <li>Mayo Clinic 中文页面：AE免疫疗法包括高剂量甲泼尼龙、IVIG、血浆置换；IVIG可每日给药2-5天。<a href="https://www.mayoclinic.org/zh-hans/diseases-conditions/autoimmune-encephalitis/diagnosis-treatment/drc-20576406" target="_blank" rel="noreferrer">Mayo Clinic</a></li>
+        <li>DailyMed / FDA IVIG说明书信息：IGIV产品有血栓、肾功能不全和急性肾衰风险；高危患者需水化、低速输注并监测。<a href="https://dailymed.nlm.nih.gov/dailymed/" target="_blank" rel="noreferrer">DailyMed</a></li>
+      </ol>
+      <p>生成日期：2026-06-09 | 临床教学参考，具体用药需结合专科医嘱、本院方案及患者风险。</p>
+    </footer>
+  </main>
+
+  <script>
+    function round(n, d = 1) {
+      if (!isFinite(n)) return "—";
+      return (Math.round(n * Math.pow(10, d)) / Math.pow(10, d)).toString();
+    }
+
+    function calc() {
+      const w = parseFloat(document.getElementById("weight").value) || 0;
+      const dose = parseFloat(document.getElementById("dailyDose").value) || 0;
+      const days = parseFloat(document.getElementById("days").value) || 0;
+      const vial = parseFloat(document.getElementById("vial").value) || 0;
+      const daily = w * dose;
+      const total = daily * days;
+      const dailyV = vial > 0 ? daily / vial : NaN;
+      const totalV = vial > 0 ? total / vial : NaN;
+      document.getElementById("outDaily").textContent = round(daily, 1) + " g";
+      document.getElementById("outTotal").textContent = round(total, 1) + " g";
+      document.getElementById("outDailyVial").textContent = round(dailyV, 1) + " 瓶";
+      document.getElementById("outTotalVial").textContent = round(totalV, 1) + " 瓶";
+    }
+
+    ["weight", "dailyDose", "days", "vial"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", calc);
+    });
+    calc();
+  </script>
+</body>
+</html>
